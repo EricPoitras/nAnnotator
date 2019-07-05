@@ -22,6 +22,7 @@
         //console.log(response.result.values);
         for (i = 0; i < response.result.values.length; i++) {
           console.log(response.result.values[i]);
+          document.getElementById("discussion").innerHTML = '<p>' + response.result.values[i][0] + '</p>';
         }
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
@@ -111,5 +112,6 @@
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
     <button id="getdata-button" onclick="setInterval(function(){ makeApiCall();}, 5000);">Get data (No sign in)</button>
     <button id="getdata-button" onclick="makeApiCall2()">Append data (Sign in required)</button>
+    <div id="discussion"></div>
   </body>
 </html>
