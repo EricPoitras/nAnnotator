@@ -27,13 +27,13 @@
     function fetchDataClick(){
       var url = 'https://sheets.googleapis.com/v4/spreadsheets/1J75p2zs7Sr-PMFpQR9yEXgA5dsCrvDKzSbcJr7XdwbY/values/A:C';
        fetch(url)
-  .then((resp) => resp.json()) // Transform the data into json
+  .then((resp) => resp.json())
   .then(function(data) {
-    // Create and append the li's to the ul
-    })
-  }).catch(function(error) {
+    console.log(data);
+  })
+  .catch(function(error) {
     console.log(error);
-  });
+  });   
     }
 
     function initClient() {
