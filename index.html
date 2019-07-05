@@ -23,6 +23,39 @@
         console.error('error: ' + reason.result.error.message);
       });
     }
+      
+    function makeApiCall2() {
+      var params = {
+        
+        spreadsheetId: '1J75p2zs7Sr-PMFpQR9yEXgA5dsCrvDKzSbcJr7XdwbY',  
+
+        range: 'A:C',  
+
+        valueInputOption: 'USER_ENTERED',  
+
+        insertDataOption: 'INSERT_ROWS', 
+      };
+
+      var valueRangeBody = {
+         "range": "A:C",
+  "majorDimension": "ROWS",
+  "values": [
+    [
+      "User 2",
+      "asd",
+      "asd"
+    ]
+  ]
+      };
+
+      var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+      request.then(function(response) {
+        // TODO: Change code below to process the `response` object:
+        console.log(response.result);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+    }
 
     function initClient() {
       var API_KEY = 'AIzaSyCgVJ_tdVQ-EVqDmaiU311_O1wi7v57UTI';  
@@ -73,5 +106,6 @@
     <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
     <button id="getdata-button" onclick="makeApiCall()">Get data (No sign in)</button>
+    <button id="getdata-button" onclick="makeApiCall2()">Append data (Sign in required)</button>
   </body>
 </html>
