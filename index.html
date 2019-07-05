@@ -5,13 +5,9 @@
     <script>
     function makeApiCall() {
       var params = {
-       
         spreadsheetId: '1J75p2zs7Sr-PMFpQR9yEXgA5dsCrvDKzSbcJr7XdwbY', 
-
         range: 'A:C',  
-
         valueRenderOption: 'FORMATTED_VALUE',  
-
         dateTimeRenderOption: 'SERIAL_NUMBER',  
       };
 
@@ -22,7 +18,7 @@
         //console.log(response.result.values);
         for (i = 0; i < response.result.values.length; i++) {
           console.log(response.result.values[i]);
-          document.getElementById("discussion").innerHTML = '<p>' + response.result.values[i][0] + '</p>';
+          document.getElementById("discussion").innerHTML += '<p>' + response.result.values[i][0] + '</p>';
         }
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
@@ -31,13 +27,9 @@
       
     function makeApiCall2() {
       var params = {
-        
         spreadsheetId: '1J75p2zs7Sr-PMFpQR9yEXgA5dsCrvDKzSbcJr7XdwbY',  
-
         range: 'A:C',  
-
         valueInputOption: 'USER_ENTERED',  
-
         insertDataOption: 'INSERT_ROWS', 
       };
 
