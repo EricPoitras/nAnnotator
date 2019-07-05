@@ -23,6 +23,19 @@
         console.error('error: ' + reason.result.error.message);
       });
     }
+      
+    function fetchDataClick(){
+       fetch(url)
+  .then(function(data) {
+    // Here you get the data to modify as you please
+         console.log(data);
+    })
+  })
+  .catch(function(error) {
+    // If there is any error you will catch them here
+        console.log(error);
+  }); 
+    }
 
     function initClient() {
       var API_KEY = 'AIzaSyCgVJ_tdVQ-EVqDmaiU311_O1wi7v57UTI';  
@@ -72,5 +85,6 @@
     </script>
     <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+    <button id="getdata-button" onclick="fetchDataClick()">Get data (No sign in)</button>
   </body>
 </html>
