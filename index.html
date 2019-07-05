@@ -26,9 +26,10 @@
         // TODO: Change code below to process the `response` object:
         //console.log(response.result);
         //console.log(response.result.values);
+          document.getElementById("discussion").innerHTML = "";
         for (i = 0; i < response.result.values.length; i++) {
           console.log(response.result.values[i]);
-          document.getElementById("discussion").innerHTML = "";
+          
           if(response.result.values[i][1] == "Teacher"){
             document.getElementById("discussion").innerHTML += `<div class="card mt-2 mb-2" style="margin-right:50px;">
                 <div class="card-body">
