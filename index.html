@@ -18,7 +18,11 @@
         //console.log(response.result.values);
         for (i = 0; i < response.result.values.length; i++) {
           console.log(response.result.values[i]);
-          document.getElementById("discussion").innerHTML += '<p>' + response.result.values[i][0] + '</p>';
+          if(response.result.values[i][0] == "Teacher"){
+            document.getElementById("discussion").innerHTML += '<p style="text-align:left;">' + response.result.values[i][0] + '</p>';
+          }else{
+            document.getElementById("discussion").innerHTML += '<p style="text-align:right;">' + response.result.values[i][0] + '</p>';
+          }
         }
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
