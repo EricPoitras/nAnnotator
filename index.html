@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 
     <title>Hello, world!</title>
   </head>
@@ -59,15 +62,17 @@
         valueInputOption: 'USER_ENTERED',  
         insertDataOption: 'INSERT_ROWS', 
       };
-
+        
+    var response_text = document.getElementById("response_text").value.toString();
+        
       var valueRangeBody = {
          "range": "A:C",
   "majorDimension": "ROWS",
   "values": [
     [
-      "User 2",
-      "asd",
-      "asd"
+      "User 3",
+      "Student",
+      response_text
     ]
   ]
       };
@@ -134,7 +139,7 @@
     
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-3">
+            <div class="col-3" style="border: 1px solid lightgray;">
                 <div id="discussion">
                     <div class="card mt-2 mb-2" style="margin-right:50px;">
                         <div class="card-body">
@@ -148,6 +153,19 @@
                             <p class="mb-0">Bla Bla Bla</p>
                         </div>
                     </div>
+                </div>
+                <div id="response">
+                    <form>
+                        <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-paper-plane"></i></span>
+                          </div>
+                          <input type="text" id="response_text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="makeApiCall2()" id="button-addon2">Submit</button>
+                          </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>  
